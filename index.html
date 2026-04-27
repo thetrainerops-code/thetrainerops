@@ -3,126 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trainer Ops — Train | Systemize | Scale</title>
-<meta name="description" content="Business management tools built for independent personal trainers — no subscriptions, no bloated software, no data locked in someone else's cloud.">
+
+<title>Trainer Ops — Early Access</title>
+
+<meta name="description" content="Trainer Ops is launching soon. A business management app for independent personal trainers. Join the waitlist for early access.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'DM Sans', sans-serif; background: #ffffff; color: #1E2D5A; min-height: 100vh; overflow-x: hidden; }
-  .page { max-width: 720px; margin: 0 auto; padding: 0 2rem 5rem; }
-  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.75rem 0 2rem; border-bottom: 1.5px solid #1E2D5A; margin-bottom: 3.5rem; }
-  .logo { font-family: 'DM Serif Display', serif; font-size: 22px; color: #1E2D5A; letter-spacing: 0.03em; text-decoration: none; }
-  .logo span { color: #3A7FD5; }
-  .badge { font-size: 10px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: #3A7FD5; background: #E8F1FB; border: 1px solid #B5D4F4; border-radius: 20px; padding: 5px 14px; }
-  .hero { margin-bottom: 2.5rem; }
-  .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #3A7FD5; margin-bottom: 1.1rem; display: flex; align-items: center; gap: 10px; }
-  .eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: #3A7FD5; }
-  h1 { font-family: 'DM Serif Display', serif; font-size: 54px; line-height: 1.08; color: #1E2D5A; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
-  h1 em { font-style: italic; color: #3A7FD5; }
-  .hero-sub { font-size: 18px; line-height: 1.7; color: #4A5568; max-width: 520px; font-weight: 300; margin-top: 1.25rem; }
-  .tagline { display: flex; align-items: center; gap: 12px; margin: 2rem 0 3rem; }
-  .tagline span { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #8A9BB0; }
-  .tagline-dot { width: 4px; height: 4px; background: #3A7FD5; border-radius: 50%; }
-  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 3rem; }
-  .feat { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.375rem; transition: border-color 0.2s; }
-  .feat:hover { border-color: #3A7FD5; }
-  .feat-icon { width: 38px; height: 38px; background: #3A7FD5; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-  .feat-icon svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  .feat h3 { font-size: 14px; font-weight: 500; color: #1E2D5A; margin-bottom: 5px; }
-  .feat p { font-size: 13px; color: #718096; line-height: 1.55; font-weight: 300; }
-  .etsy-block { background: #F0F7FF; border: 1px solid #B5D4F4; border-radius: 12px; padding: 1.375rem 1.625rem; margin-bottom: 3rem; display: flex; align-items: flex-start; gap: 12px; }
-  .etsy-dot { width: 8px; height: 8px; background: #3A7FD5; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
-  .etsy-block p { font-size: 15px; color: #4A5568; line-height: 1.65; font-weight: 300; }
-  .etsy-block strong { color: #1E2D5A; font-weight: 500; }
-  .etsy-block a { color: #3A7FD5; text-decoration: none; font-weight: 500; }
-  .etsy-block a:hover { text-decoration: underline; }
-  .signup { background: #1E2D5A; border-radius: 16px; padding: 2.25rem; margin-bottom: 3rem; }
-  .signup-label { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9BB0; margin-bottom: 0.875rem; }
-  .signup-heading { font-family: 'DM Serif Display', serif; font-size: 30px; color: #fff; margin-bottom: 0.625rem; line-height: 1.2; }
-  .signup-sub { font-size: 15px; color: #8A9BB0; margin-bottom: 1.75rem; font-weight: 300; line-height: 1.65; }
-  .cta-btn { display: inline-block; background: #3A7FD5; color: #fff; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 0 2rem; height: 48px; line-height: 48px; border-radius: 9px; text-decoration: none; letter-spacing: 0.02em; transition: background 0.2s; }
-  .cta-btn:hover { background: #2d6bbf; }
-  footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #E2E8F0; padding-top: 1.75rem; }
-  footer p { font-size: 12px; color: #A0AEC0; font-weight: 300; }
-  .footer-logo { font-family: 'DM Serif Display', serif; font-size: 15px; color: #CBD5E0; letter-spacing: 0.03em; }
-  @media (max-width: 540px) {
-    h1 { font-size: 38px; }
-    .features { grid-template-columns: 1fr; }
-    .form-row { flex-direction: column; }
-    .form-row button { width: 100%; }
-  }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #1E2D5A;
+  background: #ffffff;
+}
+
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1.8rem 4rem;
+}
+
+/* NAV */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+}
+
+.logo span { color: #3A7FD5; }
+
+.badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #3A7FD5;
+  background: #E8F1FB;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* HERO */
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 46px;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 17px;
+  color: #4A5568;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* CTA */
+
+.cta-btn {
+  display: inline-block;
+  background: #3A7FD5;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.cta-btn:hover {
+  background: #2d6bbf;
+}
+
+.cta-note {
+  font-size: 12px;
+  color: #8A9BB0;
+  margin-top: 10px;
+}
+
+/* SECTION */
+
+.section {
+  margin-top: 3rem;
+}
+
+.section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: #4A5568;
+  line-height: 1.6;
+}
+
+/* CALLOUT */
+
+.callout {
+  background: #F0F7FF;
+  border: 1px solid #B5D4F4;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 3rem;
+  font-size: 14px;
+  color: #4A5568;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 3rem;
+  font-size: 12px;
+  color: #A0AEC0;
+}
+
+@media (max-width: 540px) {
+  .hero h1 { font-size: 36px; }
+}
 </style>
 </head>
+
 <body>
+
 <div class="page">
-  <nav>
-    <a class="logo" href="#">Trainer<span>Ops</span></a>
-    <div class="badge">Coming Soon</div>
-  </nav>
 
-  <div class="hero">
-    <div class="eyebrow">Built for independent trainers</div>
-    <h1>Run your PT business<br><em>without the chaos.</em></h1>
-    <p class="hero-sub">Trainer Ops is a business management app built specifically for independent personal trainers — no bloated software, no monthly fees, no data locked in someone else's cloud.</p>
+<nav>
+  <div class="logo">Trainer<span>Ops</span></div>
+  <div class="badge">Early Access</div>
+</nav>
+
+<div class="hero">
+  <h1>TrainerOps is launching soon.</h1>
+
+  <p>
+    A business management app built specifically for independent personal trainers —
+    helping you manage clients, track sessions, and run your business
+    without subscriptions or bloated tools.
+  </p>
+
+  <a href="https://thetrainerops.beehiiv.com/subscribe" target="_blank" class="cta-btn">
+    Join the early access list →
+  </a>
+
+  <div class="cta-note">
+    Get early access + launch pricing. No spam.
   </div>
+</div>
 
-  <div class="tagline">
-    <span>Train</span><div class="tagline-dot"></div>
-    <span>Systemize</span><div class="tagline-dot"></div>
-    <span>Scale</span>
-  </div>
+<div class="section">
+  <h2>Built for independent trainers</h2>
+  <p>
+    If you're managing clients through spreadsheets, notes, and scattered tools,
+    TrainerOps is being built to bring everything into one simple system —
+    without taking control of your data or locking you into subscriptions.
+  </p>
+</div>
 
-  <div class="features">
-    <div class="feat">
-      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <h3>Client management</h3>
-      <p>Track every client, session, and program in one place</p>
-    </div>
-    <div class="feat">
-      <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-      <h3>Calendar sync</h3>
-      <p>Sessions auto-mirror to your Google Calendar instantly</p>
-    </div>
-    <div class="feat">
-      <div class="feat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-      <h3>Finance & invoicing</h3>
-      <p>Log payments, generate invoices, stay on top of revenue</p>
-    </div>
-    <div class="feat">
-      <div class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <h3>Program builder</h3>
-      <p>Build and assign training programs from your exercise library</p>
-    </div>
-    <div class="feat">
-      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-      <h3>Google Drive backup</h3>
-      <p>Your data, backed up to your own Drive. Always yours.</p>
-    </div>
-    <div class="feat">
-      <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-      <h3>One-time purchase</h3>
-      <p>No subscriptions. Pay once, own it forever.</p>
-    </div>
-  </div>
+<div class="section">
+  <h2>What you'll be able to do</h2>
+  <p>
+    Manage clients, track sessions, organize programs, and keep your business
+    running smoothly — all in one place designed specifically for personal trainers.
+  </p>
+</div>
 
-  <div class="etsy-block">
-    <div class="etsy-dot"></div>
-    <p><strong>Already a spreadsheet person?</strong> The Trainer Ops Google Sheets system is available now on Etsy — the same methodology, built for trainers who prefer to work in Sheets. <a href="https://www.etsy.com/shop/TheTrainerOps" target="_blank">View on Etsy →</a></p>
-  </div>
+<div class="callout">
+  Prefer something now? A Google Sheets version of the TrainerOps system is already available for trainers who want a lightweight solution today.
+</div>
 
-  <div class="signup">
-    <div class="signup-label">Stay in the loop</div>
-    <div class="signup-heading">Get early access.</div>
-    <p class="signup-sub">Be the first to know when Trainer Ops launches — and get exclusive early adopter pricing.</p>
-    <a href="https://thetrainerops.beehiiv.com/subscribe" target="_blank" class="cta-btn">I'm interested →</a>
-  </div>
+<div class="section" style="text-align:center;">
+  <a href="https://thetrainerops.beehiiv.com/subscribe" target="_blank" class="cta-btn">
+    Join the waitlist →
+  </a>
+</div>
 
-  <footer>
-    <p>© 2026 Trainer Ops. All rights reserved.</p>
-    <div class="footer-logo">TrainerOps</div>
-  </footer>
+<footer>
+  © 2026 Trainer Ops
+</footer>
+
 </div>
 
 </body>
