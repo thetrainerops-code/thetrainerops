@@ -1,0 +1,9 @@
+title: Trainer Ops
+description: Business management tools built for independent personal trainers.
+url: "https://thetrainerops.com"
+baseurl: ""
+
+permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - README.md
