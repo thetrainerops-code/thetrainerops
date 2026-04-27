@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trainer Ops — Train | Systemize | Scale</title>
+<meta name="description" content="Business management tools built for independent personal trainers — no subscriptions, no bloated software, no data locked in someone else's cloud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1E2D5A;
+    --blue: #3A7FD5;
+    --steel: #8A9BB0;
+    --light: #F4F6FB;
+    --white: #ffffff;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 0 2rem 5rem; }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.75rem 0 2rem;
+    border-bottom: 0.5px solid rgba(138,155,176,0.2);
+    margin-bottom: 4.5rem;
+  }
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .logo span { color: var(--blue); }
+  .nav-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--steel);
+    background: rgba(138,155,176,0.1);
+    border: 0.5px solid rgba(138,155,176,0.25);
+    border-radius: 20px;
+    padding: 5px 14px;
+  }
+  .hero { margin-bottom: 3.5rem; }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--blue);
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 52px;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--blue);
+  }
+  .hero-body {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--steel);
+    max-width: 540px;
+    font-weight: 300;
+  }
+  .tagline {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(138,155,176,0.5);
+    margin-bottom: 3rem;
+    margin-top: 2.5rem;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(138,155,176,0.15);
+    border: 0.5px solid rgba(138,155,176,0.15);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 3.5rem;
+  }
+  .feature {
+    background: rgba(20,32,70,0.85);
+    padding: 1.5rem;
+  }
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(58,127,213,0.15);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.875rem;
+  }
+  .feature-icon svg { width: 17px; height: 17px; stroke: var(--blue); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .feature h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 5px;
+  }
+  .feature p {
+    font-size: 13px;
+    color: var(--steel);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+  .etsy-block {
+    background: rgba(58,127,213,0.08);
+    border: 0.5px solid rgba(58,127,213,0.25);
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 3.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .etsy-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--blue);
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .etsy-block p {
+    font-size: 15px;
+    color: var(--steel);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .etsy-block strong { color: var(--white); font-weight: 500; }
+  .etsy-block a { color: var(--blue); text-decoration: none; font-weight: 500; }
+  .etsy-block a:hover { text-decoration: underline; }
+  .signup-section { margin-bottom: 3.5rem; }
+  .signup-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin-bottom: 1rem;
+  }
+  .signup-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .signup-sub {
+    font-size: 15px;
+    color: var(--steel);
+    margin-bottom: 1.75rem;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+  .form-row { display: flex; gap: 10px; }
+  .form-row input {
+    flex: 1;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(138,155,176,0.3);
+    border-radius: 9px;
+    padding: 0 1.1rem;
+    height: 48px;
+    font-size: 15px;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-row input::placeholder { color: rgba(138,155,176,0.45); }
+  .form-row input:focus { border-color: var(--blue); }
+  .form-row button {
+    background: var(--blue);
+    border: none;
+    border-radius: 9px;
+    padding: 0 1.5rem;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .form-row button:hover { opacity: 0.85; }
+  .privacy-note {
+    font-size: 12px;
+    color: rgba(138,155,176,0.45);
+    margin-top: 0.875rem;
+    font-weight: 300;
+  }
+  .success-msg {
+    display: none;
+    background: rgba(58,127,213,0.12);
+    border: 0.5px solid rgba(58,127,213,0.3);
+    border-radius: 9px;
+    padding: 1rem 1.1rem;
+    font-size: 14px;
+    color: var(--blue);
+    margin-top: 0.875rem;
+  }
+  footer {
+    border-top: 0.5px solid rgba(138,155,176,0.15);
+    padding-top: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 12px; color: rgba(138,155,176,0.4); font-weight: 300; }
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    color: rgba(138,155,176,0.3);
+    letter-spacing: 0.04em;
+  }
+  @media (max-width: 540px) {
+    h1 { font-size: 36px; }
+    .features { grid-template-columns: 1fr; }
+    .form-row { flex-direction: column; }
+    .form-row button { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav>
+    <a class="logo" href="#">Trainer<span>Ops</span></a>
+    <div class="nav-tag">Coming Soon</div>
+  </nav>
+
+  <div class="hero">
+    <div class="eyebrow">Built for independent trainers</div>
+    <h1>Run your PT business<br><em>without the chaos.</em></h1>
+    <p class="hero-body">Trainer Ops is a business management app built specifically for independent personal trainers — no bloated software, no monthly fees, no data locked in someone else's cloud.</p>
+  </div>
+
+  <div class="tagline">Train &nbsp;|&nbsp; Systemize &nbsp;|&nbsp; Scale</div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Client management</h3>
+      <p>Track every client, session, and program in one place</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3>Calendar sync</h3>
+      <p>Sessions auto-mirror to your Google Calendar instantly</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <h3>Finance & invoicing</h3>
+      <p>Log payments, generate invoices, stay on top of revenue</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Program builder</h3>
+      <p>Build and assign training programs from your exercise library</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      </div>
+      <h3>Google Drive backup</h3>
+      <p>Your data, backed up to your own Drive. Always yours.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3>One-time purchase</h3>
+      <p>No subscriptions. Pay once, own it forever.</p>
+    </div>
+  </div>
+
+  <div class="etsy-block">
+    <div class="etsy-dot"></div>
+    <p><strong>Already a spreadsheet person?</strong> The Trainer Ops Google Sheets system is available now on Etsy — the same methodology, built for trainers who prefer to work in Sheets. <a href="YOUR_ETSY_URL_HERE" target="_blank">View on Etsy →</a></p>
+  </div>
+
+  <div class="signup-section">
+    <div class="signup-label">Stay in the loop</div>
+    <div class="signup-heading">Get early access.</div>
+    <p class="signup-sub">Be the first to know when Trainer Ops launches. No spam — just a heads up when it's ready, and exclusive early adopter pricing.</p>
+    <div class="form-row">
+      <input type="email" id="email-input" placeholder="your@email.com" />
+      <button onclick="handleSignup()">Notify me</button>
+    </div>
+    <p class="privacy-note">No spam. Unsubscribe anytime.</p>
+    <div class="success-msg" id="success-msg">You're on the list. We'll be in touch when Trainer Ops launches.</div>
+  </div>
+
+  <footer>
+    <p>© 2026 Trainer Ops. All rights reserved.</p>
+    <div class="footer-logo">TrainerOps</div>
+  </footer>
+</div>
+
+<script>
+function handleSignup() {
+  const input = document.getElementById('email-input');
+  const msg = document.getElementById('success-msg');
+  const val = input.value.trim();
+  if (!val || !val.includes('@')) {
+    input.style.borderColor = 'rgba(210,80,80,0.6)';
+    setTimeout(() => input.style.borderColor = 'rgba(138,155,176,0.3)', 1500);
+    return;
+  }
+  input.parentElement.style.display = 'none';
+  msg.style.display = 'block';
+}
+</script>
+</body>
+</html>
