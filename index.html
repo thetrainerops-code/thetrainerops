@@ -58,7 +58,7 @@ nav {
 
 .hero {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .hero h1 {
@@ -76,13 +76,41 @@ nav {
   margin: 0 auto;
 }
 
+/* WHO THIS IS FOR */
+
+.segment {
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  background: #FAFBFF;
+}
+
+.segment h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+
+.segment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.segment-item {
+  font-size: 14px;
+  color: #4A5568;
+  line-height: 1.5;
+}
+
 /* SPLIT */
 
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-top: 3rem;
 }
 
 .card {
@@ -126,7 +154,6 @@ nav {
   padding: 12px 18px;
   border-radius: 8px;
   font-size: 14px;
-  text-align: center;
 }
 
 .cta:hover { background: #2d6bbf; }
@@ -137,6 +164,20 @@ nav {
 
 .cta.secondary:hover {
   background: #152042;
+}
+
+/* Etsy link */
+
+.text-link {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #3A7FD5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.text-link:hover {
+  text-decoration: underline;
 }
 
 /* FOOTER */
@@ -152,6 +193,10 @@ footer {
 
 @media (max-width: 720px) {
   .split {
+    grid-template-columns: 1fr;
+  }
+
+  .segment-grid {
     grid-template-columns: 1fr;
   }
 
@@ -179,9 +224,32 @@ footer {
   </p>
 </div>
 
+<!-- WHO THIS IS FOR -->
+
+<div class="segment">
+  <h2>Who this is for</h2>
+
+  <div class="segment-grid">
+    <div class="segment-item">
+      ✔ Independent personal trainers managing 5–50 clients
+    </div>
+    <div class="segment-item">
+      ✔ Trainers still relying on spreadsheets or notes apps
+    </div>
+    <div class="segment-item">
+      ✔ Coaches who want structure without complex software
+    </div>
+    <div class="segment-item">
+      ✔ Trainers building a scalable coaching business
+    </div>
+  </div>
+</div>
+
+<!-- SPLIT PATHS -->
+
 <div class="split">
 
-  <!-- PATH 1: SaaS / WAITLIST -->
+  <!-- APP PATH -->
   <div class="card">
     <div>
       <div class="label">Early Access</div>
@@ -197,19 +265,23 @@ footer {
     </a>
   </div>
 
-  <!-- PATH 2: IMMEDIATE PRODUCT -->
+  <!-- ETSY PATH -->
   <div class="card">
     <div>
       <div class="label">Available Now</div>
       <h2>TrainerOps Sheets System</h2>
       <p>
         A ready-to-use Google Sheets system based on the same framework as the app.
-        Perfect if you want structure today without waiting for launch.
+        Ideal if you want structure today instead of waiting for launch.
       </p>
     </div>
 
     <a class="cta" href="https://www.etsy.com/shop/TheTrainerOps" target="_blank">
-      Get the Sheets system →
+      Get the system →
+    </a>
+
+    <a class="text-link" href="https://www.etsy.com/shop/TheTrainerOps" target="_blank">
+      Click here to view on Etsy →
     </a>
   </div>
 
