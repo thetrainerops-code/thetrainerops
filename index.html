@@ -42,13 +42,8 @@
   .signup-label { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9BB0; margin-bottom: 0.875rem; }
   .signup-heading { font-family: 'DM Serif Display', serif; font-size: 30px; color: #fff; margin-bottom: 0.625rem; line-height: 1.2; }
   .signup-sub { font-size: 15px; color: #8A9BB0; margin-bottom: 1.75rem; font-weight: 300; line-height: 1.65; }
-  .form-row { display: flex; gap: 10px; }
-  .form-row input { flex: 1; background: rgba(255,255,255,0.08); border: 1px solid rgba(138,155,176,0.3); border-radius: 9px; padding: 0 1rem; height: 46px; font-size: 15px; color: #fff; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s; }
-  .form-row input::placeholder { color: rgba(138,155,176,0.45); }
-  .form-row input:focus { border-color: #3A7FD5; }
-  .form-row button { background: #3A7FD5; border: none; border-radius: 9px; padding: 0 1.5rem; height: 46px; font-size: 14px; font-weight: 500; color: #fff; font-family: 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
-  .form-row button:hover { background: #2d6bbf; }
-  .privacy-note { font-size: 12px; color: rgba(138,155,176,0.5); margin-top: 0.875rem; font-weight: 300; }
+  .cta-btn { display: inline-block; background: #3A7FD5; color: #fff; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 0 2rem; height: 48px; line-height: 48px; border-radius: 9px; text-decoration: none; letter-spacing: 0.02em; transition: background 0.2s; }
+  .cta-btn:hover { background: #2d6bbf; }
   footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #E2E8F0; padding-top: 1.75rem; }
   footer p { font-size: 12px; color: #A0AEC0; font-weight: 300; }
   .footer-logo { font-family: 'DM Serif Display', serif; font-size: 15px; color: #CBD5E0; letter-spacing: 0.03em; }
@@ -114,18 +109,14 @@
 
   <div class="etsy-block">
     <div class="etsy-dot"></div>
-    <p><strong>Already a spreadsheet person?</strong> The Trainer Ops Google Sheets system is available now on Etsy — the same methodology, built for trainers who prefer to work in Sheets. <a href="https://www.etsy.com/shop/TheTrainerOps" target="_blank">View on Etsy →</a></p>
+    <p><strong>Already a spreadsheet person?</strong> The Trainer Ops Google Sheets system is available now on Etsy — the same methodology, built for trainers who prefer to work in Sheets. <a href="YOUR_ETSY_URL_HERE" target="_blank">View on Etsy →</a></p>
   </div>
 
   <div class="signup">
     <div class="signup-label">Stay in the loop</div>
     <div class="signup-heading">Get early access.</div>
     <p class="signup-sub">Be the first to know when Trainer Ops launches — and get exclusive early adopter pricing.</p>
-    <div class="form-row">
-      <input type="email" id="email-input" placeholder="your@email.com" />
-      <button onclick="handleSignup()">Notify me</button>
-    </div>
-    <p class="privacy-note">No spam. Unsubscribe anytime.</p>
+    <a href="https://thetrainerops.beehiiv.com/subscribe" target="_blank" class="cta-btn">I'm interested →</a>
   </div>
 
   <footer>
@@ -133,17 +124,6 @@
     <div class="footer-logo">TrainerOps</div>
   </footer>
 </div>
-<script>
-function handleSignup() {
-  const input = document.getElementById('email-input');
-  const val = input.value.trim();
-  if (!val || !val.includes('@')) {
-    input.style.borderColor = 'rgba(220,80,80,0.6)';
-    setTimeout(() => input.style.borderColor = 'rgba(138,155,176,0.3)', 1500);
-    return;
-  }
-  window.location.href = 'https://thetrainerops.beehiiv.com/subscribe?email=' + encodeURIComponent(val);
-}
-</script>
+
 </body>
 </html>
