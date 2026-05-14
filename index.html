@@ -1,297 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TrainerOps helps independent personal trainers manage clients, sessions, and business operations. Join the waitlist for early access." />
+  <title>TrainerOps — Systems for Personal Trainers</title>
+  <link rel="icon" href="/traineropslogo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<title>Trainer Ops — Systems for Personal Trainers</title>
+    body {
+      background: #0d1117;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
 
-<meta name="description" content="Trainer Ops helps personal trainers manage clients, sessions, and business operations. Join early access or get the spreadsheet system today.">
+    a { color: #3b82f6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    .page {
+      max-width: 480px;
+      margin: 0 auto;
+      border-left: 0.5px solid rgba(255,255,255,0.06);
+      border-right: 0.5px solid rgba(255,255,255,0.06);
+      min-height: 100vh;
+    }
 
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ── Nav ── */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      border-bottom: 0.5px solid rgba(255,255,255,0.08);
+    }
+    .nav-logo-main { font-size: 15px; font-weight: 600; color: #fff; letter-spacing: 0.5px; }
+    .nav-logo-main span { color: #3b82f6; }
+    .nav-logo-tag { font-size: 9px; color: rgba(255,255,255,0.3); letter-spacing: 1.5px; margin-top: 2px; }
+    .nav-link { font-size: 12px; color: #3b82f6; }
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: #fff;
-  color: #1E2D5A;
-}
+    /* ── Hero ── */
+    .hero {
+      padding: 44px 24px 36px;
+      text-align: center;
+      border-bottom: 0.5px solid rgba(255,255,255,0.08);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(59,130,246,0.1);
+      border: 0.5px solid rgba(59,130,246,0.25);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: #6aa3f8;
+      margin-bottom: 20px;
+    }
+    .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: #3b82f6; }
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: -0.4px;
+    }
+    .hero h1 span { color: #3b82f6; }
+    .hero p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      margin-bottom: 26px;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .email-row { display: flex; gap: 8px; max-width: 340px; margin: 0 auto 8px; }
+    .email-row input {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border: 0.5px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 13px;
+      color: #fff;
+      outline: none;
+      min-width: 0;
+    }
+    .email-row input::placeholder { color: rgba(255,255,255,0.25); }
+    .email-row input:focus { border-color: #3b82f6; }
+    .email-row button {
+      background: #3b82f6;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-size: 13px;
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .email-row button:hover { background: #2563eb; }
+    .hero-note { font-size: 11px; color: rgba(255,255,255,0.2); }
 
-.page {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 1.8rem 4rem;
-}
+    /* ── Tabs ── */
+    .tabs-wrapper {
+      padding: 20px 24px 0;
+      border-bottom: 0.5px solid rgba(255,255,255,0.08);
+    }
+    .tabs-pills {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      padding-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      padding: 8px 18px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      border: 0.5px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+      user-select: none;
+    }
+    .pill:hover { border-color: #3b82f6; color: #6aa3f8; }
+    .pill.active { background: #3b82f6; color: #fff; border-color: #3b82f6; font-weight: 500; }
 
-/* NAV */
+    /* ── Tab Content ── */
+    .tab-content { display: none; padding: 24px; min-height: 280px; }
+    .tab-content.active { display: block; }
+    .section-eyebrow { font-size: 11px; color: #3b82f6; margin-bottom: 8px; letter-spacing: 0.3px; }
+    .section-title { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 16px; line-height: 1.35; }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: 1px solid #E2E8F0;
-  margin-bottom: 2.5rem;
-}
+    /* ── Survey ── */
+    .survey-options { display: flex; flex-direction: column; gap: 8px; }
+    .option-btn {
+      background: rgba(255,255,255,0.04);
+      border: 0.5px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 13px 14px;
+      font-size: 13px;
+      color: #fff;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.15s;
+      width: 100%;
+    }
+    .option-btn:hover { border-color: #3b82f6; background: rgba(59,130,246,0.06); }
+    .option-btn.selected { border: 1.5px solid #3b82f6; background: rgba(59,130,246,0.1); color: #fff; }
+    .option-icon {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .option-btn.selected .option-icon { background: rgba(59,130,246,0.2); }
 
-.logo {
-  font-family: 'DM Serif Display', serif;
-  font-size: 22px;
-}
+    /* ── Response Card ── */
+    .response-card {
+      margin-top: 16px;
+      background: rgba(59,130,246,0.07);
+      border: 1.5px solid rgba(59,130,246,0.35);
+      border-radius: 14px;
+      padding: 18px;
+      display: none;
+    }
+    .response-card.visible { display: block; }
+    .response-tag { font-size: 10px; color: #6aa3f8; margin-bottom: 5px; letter-spacing: 0.3px; text-transform: uppercase; }
+    .response-headline { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; line-height: 1.4; }
+    .response-body { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 12px; }
+    .response-features { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
+    .response-feature { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.55); }
+    .response-divider { height: 0.5px; background: rgba(255,255,255,0.08); margin-bottom: 12px; }
+    .response-cta-label { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
+    .response-email { display: flex; gap: 8px; }
+    .response-email input {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border: 0.5px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #fff;
+      outline: none;
+      min-width: 0;
+    }
+    .response-email input::placeholder { color: rgba(255,255,255,0.25); }
+    .response-email input:focus { border-color: #3b82f6; }
+    .response-email button {
+      background: #3b82f6;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .response-email button:hover { background: #2563eb; }
+    .response-note { font-size: 10px; color: rgba(255,255,255,0.2); text-align: center; margin-top: 8px; }
 
-.logo span { color: #3A7FD5; }
+    /* ── Why ── */
+    .promise-list { display: flex; flex-direction: column; gap: 8px; }
+    .promise-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 13px;
+      background: rgba(255,255,255,0.04);
+      border: 0.5px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+    }
+    .promise-text { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; }
 
-.badge {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: #E8F1FB;
-  color: #3A7FD5;
-  padding: 6px 12px;
-  border-radius: 20px;
-}
+    /* ── Who ── */
+    .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .audience-card {
+      background: rgba(255,255,255,0.04);
+      border: 0.5px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .audience-title { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .audience-desc { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5; }
 
-/* HERO */
+    /* ── Launch Card ── */
+    .launch-section { padding: 20px 24px 28px; }
+    .launch-card {
+      background: rgba(59,130,246,0.08);
+      border: 0.5px solid rgba(59,130,246,0.25);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .launch-card h3 { font-size: 19px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .launch-card p { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 20px; line-height: 1.6; }
+    .launch-email { display: flex; gap: 8px; max-width: 300px; margin: 0 auto 8px; }
+    .launch-email input {
+      flex: 1;
+      background: rgba(255,255,255,0.07);
+      border: 0.5px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 11px 12px;
+      font-size: 13px;
+      color: #fff;
+      outline: none;
+      min-width: 0;
+    }
+    .launch-email input::placeholder { color: rgba(255,255,255,0.25); }
+    .launch-email input:focus { border-color: #3b82f6; }
+    .launch-email button {
+      background: #3b82f6;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-size: 13px;
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .launch-email button:hover { background: #2563eb; }
+    .launch-note { font-size: 11px; color: rgba(255,255,255,0.2); }
 
-.hero {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.hero h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 44px;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 17px;
-  color: #4A5568;
-  line-height: 1.7;
-  max-width: 620px;
-  margin: 0 auto;
-}
-
-/* WHO THIS IS FOR */
-
-.segment {
-  margin-top: 2.5rem;
-  margin-bottom: 3rem;
-  padding: 1.5rem;
-  border: 1px solid #E2E8F0;
-  border-radius: 14px;
-  background: #FAFBFF;
-}
-
-.segment h2 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 22px;
-  margin-bottom: 1rem;
-}
-
-.segment-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.segment-item {
-  font-size: 14px;
-  color: #4A5568;
-  line-height: 1.5;
-}
-
-/* SPLIT */
-
-.split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.card {
-  border: 1px solid #E2E8F0;
-  border-radius: 14px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 260px;
-}
-
-.card h2 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 22px;
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  font-size: 14px;
-  color: #4A5568;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.label {
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #8A9BB0;
-  margin-bottom: 0.75rem;
-}
-
-/* CTA */
-
-.cta {
-  display: inline-block;
-  text-decoration: none;
-  background: #3A7FD5;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-.cta:hover { background: #2d6bbf; }
-
-.cta.secondary {
-  background: #1E2D5A;
-}
-
-.cta.secondary:hover {
-  background: #152042;
-}
-
-/* Etsy link */
-
-.text-link {
-  font-size: 13px;
-  margin-top: 10px;
-  color: #3A7FD5;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.text-link:hover {
-  text-decoration: underline;
-}
-
-/* FOOTER */
-
-footer {
-  margin-top: 3rem;
-  font-size: 12px;
-  color: #A0AEC0;
-  text-align: center;
-}
-
-/* MOBILE */
-
-@media (max-width: 720px) {
-  .split {
-    grid-template-columns: 1fr;
-  }
-
-  .segment-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-}
-</style>
+    /* ── Footer ── */
+    .footer {
+      padding: 16px 24px;
+      border-top: 0.5px solid rgba(255,255,255,0.08);
+      text-align: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+    }
+  </style>
 </head>
-
 <body>
+  <div class="page">
 
-<div class="page">
+    <!-- Nav -->
+    <nav class="nav">
+      <div>
+        <div class="nav-logo-main">TRAINER <span>OPS</span></div>
+        <div class="nav-logo-tag">TRAIN | SYSTEMIZE | SCALE</div>
+      </div>
+      <a class="nav-link" href="/blog">Blog & Dev Logs →</a>
+    </nav>
 
-<nav>
-  <a href="/"><img src="/traineropslogo.png" alt="Trainer Ops" style="height:72px;width:auto;" /></a>
- <a href="/blog" style="font-size:13px;font-weight:500;color:#3A7FD5;text-decoration:none;letter-spacing:0.01em;">Blog & Dev Logs →</a>
-</nav>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="badge"><div class="badge-dot"></div>App coming soon · iOS & Android</div>
+      <h1>Your training business,<br><span>finally under control.</span></h1>
+      <p>Built for independent personal trainers done duct-taping their business together with spreadsheets and notes apps.</p>
+      <div class="email-row">
+        <input type="email" id="hero-email" placeholder="your@email.com" />
+        <button onclick="submitEmail('hero-email')">Get early access</button>
+      </div>
+      <p class="hero-note">Free trial at launch · No credit card required</p>
+    </section>
 
-<div class="hero">
-  <h1>Run your personal training business without chaos.</h1>
-  <p>
-    TrainerOps helps independent trainers manage clients, sessions, and business operations.
-    Choose how you want to get started below.
-  </p>
-</div>
-
-<!-- WHO THIS IS FOR -->
-
-<div class="segment">
-  <h2>Who this is for</h2>
-
-  <div class="segment-grid">
-    <div class="segment-item">
-      ✔ Independent personal trainers managing 0–50+ clients
+    <!-- Tabs -->
+    <div class="tabs-wrapper">
+      <div class="tabs-pills">
+        <div class="pill active" onclick="switchTab('survey')">Find your fit</div>
+        <div class="pill" onclick="switchTab('why')">Why TrainerOps</div>
+        <div class="pill" onclick="switchTab('who')">Who it's for</div>
+      </div>
     </div>
-    <div class="segment-item">
-      ✔ Trainers still relying on spreadsheets or notes apps
+
+    <!-- Tab: Survey -->
+    <div id="tab-survey" class="tab-content active">
+      <div class="section-eyebrow">Quick question</div>
+      <div class="section-title">What's your biggest challenge right now?</div>
+      <div class="survey-options">
+        <button class="option-btn" onclick="selectOption(this,'tracking')">
+          <div class="option-icon"><i class="ti ti-users" style="font-size:14px;color:#3b82f6;"></i></div>
+          Tracking clients & sessions
+        </button>
+        <button class="option-btn" onclick="selectOption(this,'payments')">
+          <div class="option-icon"><i class="ti ti-currency-dollar" style="font-size:14px;color:#3b82f6;"></i></div>
+          Getting paid on time
+        </button>
+        <button class="option-btn" onclick="selectOption(this,'programs')">
+          <div class="option-icon"><i class="ti ti-file-text" style="font-size:14px;color:#3b82f6;"></i></div>
+          Building & sharing programs
+        </button>
+        <button class="option-btn" onclick="selectOption(this,'organized')">
+          <div class="option-icon"><i class="ti ti-layout-grid" style="font-size:14px;color:#3b82f6;"></i></div>
+          Staying organized across tools
+        </button>
+        <button class="option-btn" onclick="selectOption(this,'pricing')">
+          <div class="option-icon"><i class="ti ti-tag" style="font-size:14px;color:#3b82f6;"></i></div>
+          Other apps are too pricey
+        </button>
+        <button class="option-btn" onclick="selectOption(this,'all')">
+          <div class="option-icon"><i class="ti ti-list-check" style="font-size:14px;color:#3b82f6;"></i></div>
+          All of the above
+        </button>
+      </div>
+      <div class="response-card" id="response-card">
+        <div class="response-tag" id="response-tag"></div>
+        <div class="response-headline" id="response-headline"></div>
+        <div class="response-body" id="response-body"></div>
+        <div class="response-features" id="response-features"></div>
+        <div class="response-divider"></div>
+        <div class="response-cta-label">Join the waitlist — be first when we solve this for you.</div>
+        <div class="response-email">
+          <input type="email" id="survey-email" placeholder="your@email.com" />
+          <button onclick="submitEmail('survey-email')">Join waitlist</button>
+        </div>
+        <p class="response-note">Free trial at launch · No credit card needed</p>
+      </div>
     </div>
-    <div class="segment-item">
-      ✔ Coaches who want structure without complex software
+
+    <!-- Tab: Why -->
+    <div id="tab-why" class="tab-content">
+      <div class="section-eyebrow">Why TrainerOps</div>
+      <div class="section-title">There's a better way to run your business.</div>
+      <div class="promise-list">
+        <div class="promise-item">
+          <i class="ti ti-check" style="font-size:13px;color:#3b82f6;margin-top:2px;flex-shrink:0;"></i>
+          <span class="promise-text">Everything in one app — clients, sessions, programs, and money</span>
+        </div>
+        <div class="promise-item">
+          <i class="ti ti-check" style="font-size:13px;color:#3b82f6;margin-top:2px;flex-shrink:0;"></i>
+          <span class="promise-text">Works offline — your data stays on your phone, always accessible</span>
+        </div>
+        <div class="promise-item">
+          <i class="ti ti-check" style="font-size:13px;color:#3b82f6;margin-top:2px;flex-shrink:0;"></i>
+          <span class="promise-text">No client app needed — share directly to WhatsApp, iMessage, or email</span>
+        </div>
+        <div class="promise-item">
+          <i class="ti ti-check" style="font-size:13px;color:#3b82f6;margin-top:2px;flex-shrink:0;"></i>
+          <span class="promise-text">Google Calendar sync — bridge your app to your daily workflow</span>
+        </div>
+        <div class="promise-item">
+          <i class="ti ti-check" style="font-size:13px;color:#3b82f6;margin-top:2px;flex-shrink:0;"></i>
+          <span class="promise-text">Priced for solo trainers — not enterprise coaching platforms</span>
+        </div>
+      </div>
     </div>
-    <div class="segment-item">
-      ✔ Trainers building a scalable coaching business
+
+    <!-- Tab: Who -->
+    <div id="tab-who" class="tab-content">
+      <div class="section-eyebrow">Who it's for</div>
+      <div class="section-title">Built for real trainers — not online coaching platforms.</div>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div style="font-size:18px;color:#3b82f6;margin-bottom:8px;"><i class="ti ti-user"></i></div>
+          <div class="audience-title">Solo trainers</div>
+          <div class="audience-desc">Running 5–50 clients without a team</div>
+        </div>
+        <div class="audience-card">
+          <div style="font-size:18px;color:#3b82f6;margin-bottom:8px;"><i class="ti ti-table"></i></div>
+          <div class="audience-title">Spreadsheet users</div>
+          <div class="audience-desc">Ready to graduate to something built for this</div>
+        </div>
+        <div class="audience-card">
+          <div style="font-size:18px;color:#3b82f6;margin-bottom:8px;"><i class="ti ti-building"></i></div>
+          <div class="audience-title">Gym-based PTs</div>
+          <div class="audience-desc">Working on the floor, not behind a desk</div>
+        </div>
+        <div class="audience-card">
+          <div style="font-size:18px;color:#3b82f6;margin-bottom:8px;"><i class="ti ti-trending-up"></i></div>
+          <div class="audience-title">Growing coaches</div>
+          <div class="audience-desc">Building a real business, not just a hobby</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Launch Card -->
+    <section class="launch-section">
+      <div class="launch-card">
+        <h3>Be first when we launch.</h3>
+        <p>Join the waitlist for early access and a free trial.<br>No spam. No credit card. Just first in line.</p>
+        <div class="launch-email">
+          <input type="email" id="launch-email" placeholder="your@email.com" />
+          <button onclick="submitEmail('launch-email')">Join now</button>
+        </div>
+        <p class="launch-note">Free trial at launch · Cancel anytime</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      © 2026 Trainer Ops &nbsp;·&nbsp; <a href="/privacy-policy" style="color:rgba(255,255,255,0.2);text-decoration:none;">Privacy Policy</a>
+    </footer>
+
   </div>
-</div>
 
-<!-- SPLIT PATHS -->
+  <script>
+    const responses = {
+      tracking: {
+        tag: 'Client & session management',
+        headline: 'Every client. Every session. Always at your fingertips.',
+        body: 'TrainerOps keeps every client profile, session history, goal, and note in one place — organized, searchable, and accessible offline anytime.',
+        features: ['Client profiles with goals, notes & status', 'Full session history per client', 'Follow-up reminders so nobody slips through']
+      },
+      payments: {
+        tag: 'Finance & invoicing',
+        headline: 'Stop chasing payments. Start getting paid.',
+        body: 'TrainerOps tracks every session, package credit, and invoice in one place — with low balance alerts so you always know who owes what before it becomes a problem.',
+        features: ['Session package & credit tracking', 'Invoice generation & payment status', 'Low balance alerts on client cards']
+      },
+      programs: {
+        tag: 'Program builder',
+        headline: 'Build once. Share instantly. Look professional.',
+        body: 'Build programs in minutes and send them as a clean PDF directly to WhatsApp, iMessage, or email — no client app needed, no friction for your clients.',
+        features: ['Template-based program builder', 'One-tap PDF export & share', 'No client app required']
+      },
+      organized: {
+        tag: 'All-in-one operations',
+        headline: 'One app. No more juggling.',
+        body: "TrainerOps replaces every spreadsheet, notes app, and reminder you're currently using — clients, sessions, programs, finance, and leads all in one place.",
+        features: ['Dashboard overview of your whole business', 'Works offline — no internet needed', 'Automatic cloud backup for peace of mind']
+      },
+      pricing: {
+        tag: 'Pricing & value',
+        headline: "Professional tools shouldn't cost a fortune.",
+        body: 'Most PT apps charge $30–60/mo for features built for large online coaching businesses — not solo trainers working in person. TrainerOps is built specifically for independent trainers, priced to match.',
+        features: ['Basic plan from $10/mo after your first month', '14-day free trial — no credit card needed', "No bloated features you'll never use"]
+      },
+      all: {
+        tag: 'The full picture',
+        headline: "That's exactly why TrainerOps exists.",
+        body: 'Every one of those problems — clients, payments, programs, organization, and price — solved in a single app built specifically for independent personal trainers like you.',
+        features: ['Complete client & session management', 'Finance tracking, invoicing & packages', 'Program builder with PDF sharing', 'Priced for solo trainers from $10/mo']
+      }
+    };
 
-<div class="split">
+    function switchTab(key) {
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelector(`[onclick="switchTab('${key}')"]`).classList.add('active');
+      document.getElementById('tab-' + key).classList.add('active');
+    }
 
-  <!-- APP PATH -->
-  <div class="card">
-    <div>
-      <div class="label">Early Access</div>
-      <h2>TrainerOps App</h2>
-      <p>
-        A dedicated business management system for personal trainers —
-        currently in development. Join the waitlist to get early access and launch pricing.
-      </p>
-    </div>
+    function selectOption(btn, key) {
+      document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const r = responses[key];
+      document.getElementById('response-tag').textContent = r.tag;
+      document.getElementById('response-headline').textContent = r.headline;
+      document.getElementById('response-body').textContent = r.body;
+      const featEl = document.getElementById('response-features');
+      featEl.innerHTML = r.features.map(f => `
+        <div class="response-feature">
+          <i class="ti ti-check" style="font-size:12px;color:#3b82f6;flex-shrink:0;"></i>
+          ${f}
+        </div>`).join('');
+      const card = document.getElementById('response-card');
+      card.classList.add('visible');
+      setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+    }
 
-    <a class="cta secondary" href="https://thetrainerops.beehiiv.com/subscribe" target="_blank">
-      Join early access →
-    </a>
-  </div>
-
-  <!-- ETSY PATH -->
-  <div class="card">
-    <div>
-      <div class="label">Available Now</div>
-      <h2>TrainerOps Sheets System</h2>
-      <p>
-        A ready-to-use Google Sheets system based on the same framework as the app.
-        Ideal if you want structure today instead of waiting for launch.
-      </p>
-    </div>
-
-    <a class="cta" href="https://www.etsy.com/shop/TheTrainerOps" target="_blank">
-      Get the system →
-    </a>
-
-    <a class="text-link" href="https://www.etsy.com/shop/TheTrainerOps" target="_blank">
-      Click here to view on Etsy →
-    </a>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 Trainer Ops &nbsp;·&nbsp; <a href="/privacy-policy" style="color:#A0AEC0;text-decoration:none;">Privacy Policy</a>
-</footer>
-
-</div>
-
+    function submitEmail(inputId) {
+      const input = document.getElementById(inputId);
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) {
+        input.style.borderColor = '#ef4444';
+        setTimeout(() => input.style.borderColor = '', 1500);
+        return;
+      }
+      const beehiivUrl = 'https://thetrainerops.beehiiv.com/subscribe';
+      window.open(`${beehiivUrl}?email=${encodeURIComponent(email)}`, '_blank');
+    }
+  </script>
 </body>
 </html>
