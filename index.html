@@ -308,11 +308,10 @@
       <div class="badge"><div class="badge-dot"></div>App coming soon · iOS & Android</div>
       <h1>Your training business,<br><span>finally under control.</span></h1>
       <p>Built for independent personal trainers done duct-taping their business together with spreadsheets and notes apps.</p>
-      <div class="email-row">
-        <input type="email" id="hero-email" placeholder="your@email.com" />
-        <button onclick="submitEmail('hero-email')">Get early access</button>
+      <div>
+        <button onclick="goToWaitlist()" style="background:#1a2744;border:none;border-radius:10px;padding:13px 28px;font-size:14px;color:#fff;font-weight:500;cursor:pointer;">Get early access</button>
       </div>
-      <p class="hero-note">Free trial at launch · No credit card required</p>
+      <p class="hero-note" style="margin-top:10px;">Free trial at launch · No credit card required</p>
     </section>
 
     <!-- Tabs -->
@@ -357,10 +356,7 @@
         <div class="response-features" id="response-features"></div>
         <div class="response-divider"></div>
         <div class="response-cta-label">Join the waitlist — be first when we solve this for you.</div>
-        <div class="response-email">
-          <input type="email" id="survey-email" placeholder="your@email.com" />
-          <button onclick="submitEmail('survey-email')">Join waitlist</button>
-        </div>
+        <button onclick="goToWaitlist()" style="width:100%;background:#1a2744;border:none;border-radius:8px;padding:11px;font-size:13px;color:#fff;font-weight:500;cursor:pointer;">Join waitlist</button>
         <p class="response-note">Free trial at launch · No credit card needed</p>
       </div>
     </div>
@@ -426,11 +422,8 @@
       <div class="launch-card">
         <h3>Be first when we launch.</h3>
         <p>Join the waitlist for early access and a free trial.<br>No spam. No credit card. Just first in line.</p>
-        <div class="launch-email">
-          <input type="email" id="launch-email" placeholder="your@email.com" />
-          <button onclick="submitEmail('launch-email')">Join now</button>
-        </div>
-        <p class="launch-note">Free trial at launch · Cancel anytime</p>
+        <button onclick="goToWaitlist()" style="background:#1a2744;border:none;border-radius:10px;padding:13px 32px;font-size:14px;color:#fff;font-weight:500;cursor:pointer;">Join now</button>
+        <p class="launch-note" style="margin-top:10px;">Free trial at launch · Cancel anytime</p>
       </div>
     </section>
 
@@ -500,16 +493,8 @@
       setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
     }
 
-    function submitEmail(inputId) {
-      const input = document.getElementById(inputId);
-      const email = input.value.trim();
-      if (!email || !email.includes('@')) {
-        input.style.borderColor = '#ef4444';
-        setTimeout(() => input.style.borderColor = '', 1500);
-        return;
-      }
-      const beehiivUrl = 'https://thetrainerops.beehiiv.com/subscribe';
-      window.open(`${beehiivUrl}?email=${encodeURIComponent(email)}`, '_blank');
+    function goToWaitlist() {
+      window.open('https://thetrainerops.beehiiv.com/subscribe', '_blank');
     }
   </script>
 </body>
