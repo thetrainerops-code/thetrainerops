@@ -9,7 +9,7 @@ tag: "Client Management"
 
 ---
 
-Most personal trainers are great at training. The actual coaching part, like reading a client's movement, adjusting load, or cueing a squat, is what you got into this.
+Most personal trainers are great at training. The actual coaching part (reading a client's movement, adjusting load, or cueing a squat) is what you got into this.
 
 The business side however is a different story.
 
