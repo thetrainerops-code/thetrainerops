@@ -3,6 +3,7 @@ layout: post
 title: "The Client Information You Should Be Tracking (But Probably Aren't)"
 date: 2026-05-14
 description: "Most personal trainers track the basics. Here's the full picture, and why the gaps are costing you."
+read_time: "6 min read"
 tag: "Client Management"
 ---
 
@@ -22,52 +23,39 @@ Here's what you should actually be tracking for every client, and why it matters
 
 Let's start with the obvious ones, because even these get messy when you're juggling 15+ clients.
 
-**Name, phone, and email.** Obvious, but are they current? 
+**Name, phone, and email.** Obvious, but are they current? Do you have to scroll through months of WhatsApp to find a client's number, or is it somewhere you can pull up in five seconds? If a client moves or changes their number, does your record update?
 
-Do you have to scroll through months of WhatsApp to find a client's number, or is it somewhere you can pull up in five seconds? 
-
-If a client moves or changes their number, does your record update?
-
-**Status.** Is this client active, on hold, or inactive? 
-
-This matters more than most trainers realize. Knowing your active client count at any given moment is the foundation of understanding your income capacity. 
+**Status.** Is this client active, on hold, or inactive? This matters more than most trainers realize. Knowing your active client count at any given moment is the foundation of understanding your income capacity. 
 
 An "on hold" client is different from an inactive one. What's the difference? They're coming back. Treating them the same creates confusion when you're planning your schedule or reaching out.
 
 **Start date.** This one gets skipped constantly, and then trainers wonder why they can't remember if a client has been with them for six months or two years. 
-
 Start dates matter for anniversaries (a simple "one year with you!" message goes a long way for retention), for evaluating progress honestly, and for understanding your average client lifespan.
 
 ---
 
 ## The Information That Actually Drives Results
 
-**Training goal.** This should be one clear sentence. 
-
-Not "get fit." 
+**Training goal.** This should be one clear sentence. Not "get fit." 
 
 Great examples include:
 - "Lose 20 lbs before her daughter's wedding in June"  
 - "Build enough strength to go back to recreational hockey" 
 - "Stay consistent with three sessions a week for the first time in his life." 
 
-A specific goal is a coaching anchor. It tells you how to program, how to check in, and when to celebrate a win.
+A specific goal is a coaching anchor. It tells you how to program, how to check in, and when to celebrate a win. If you don't have a written goal for every client, you're programming in the dark.
 
-If you don't have a written goal for every client, you're programming in the dark.
+**Birthday.** This feels like a small thing. It isn't. 
 
-**Birthday.** This feels like a small thing. 
+A birthday message, especially from a trainer who remembered without being told, is one of the most effective retention tools there is. It reminds the client that they matter to you beyond the transaction. And, best of all, it costs you nothing. 
 
-It isn't. 
+**Notes.** This is the catch-all for everything that doesn't fit somewhere else, and it's where most trainers are the most disorganized. Good client notes include: 
 
-A birthday message, especially from a trainer who remembered without being told, is one of the most effective retention tools there is. 
-
-It costs you nothing. 
-
-It reminds the client that they matter to you beyond the transaction.
-
-**Notes.** This is the catch-all for everything that doesn't fit somewhere else, and it's where most trainers are the most disorganized. 
-
-Good client notes include: injuries and limitations, things that motivate or demotivate them, life context ("going through a divorce, stressed at work"), preferences ("hates burpees, loves sled work"), and anything that came up in a session that you want to remember for next time.
+- Injuries and limitations
+- What motivates or demotivates them
+- Life context ("going through a divorce, stressed at work")
+- Preferences ("hates burpees, loves sled work")
+- Previous sessions that you want to remember for next time.
 
 The best trainers in the world take notes after every session. We are not talking essays. Just a few lines like: 
 
@@ -80,19 +68,11 @@ These notes compound over time. A year in, they're a detailed portrait of your c
 
 ## The Business Information Most Trainers Skip Entirely
 
-**Monthly rate and billing type.** Do you know, off the top of your head, exactly what every single client pays you and when? 
+**Monthly rate and billing type.** Do you know, off the top of your head, exactly what every single client pays you and when? Most trainers don't. 
 
-Most trainers don't. 
+They remember the rough number but not whether it's per session, monthly retainer, or package-based. When it's time to follow up on a missed payment or raise rates, that vagueness costs you. Every client should have a clear, documented rate and billing type. Not in your memory, but rather in a record.
 
-They remember the rough number but not whether it's per session, monthly retainer, or package-based. When it's time to follow up on a missed payment or raise rates, that vagueness costs you.
-
-Every client should have a clear, documented rate and billing type. Not in your memory, but rather in a record.
-
-**Billing type specifically** matters because it determines how you invoice, how you track payments, and how you think about income stability. 
-
-A client on a **monthly** retainer is predictable revenue. 
-
-A client who pays **per session** is variable. 
+**Billing type specifically** matters because it determines how you invoice, how you track payments, and how you think about income stability. A client on a **monthly** retainer is predictable revenue. A client who pays **per session** is variable. 
 
 Knowing the split across your whole roster tells you how financially stable your business actually is.
 
@@ -104,17 +84,13 @@ Knowing the split across your whole roster tells you how financially stable your
 
 If you don't have a clear record of what program each client is on and when it started, you can't:
 
-- periodize properly
-- assess whether programming is contributing to results
-- efficiently build new programs because you're starting from scratch every time.
+- Periodize properly
+- Assess whether programming is contributing to results
+- Efficiently build new programs because you're starting from scratch every time.
 
 **Workout logs.** This is the deepest level of client tracking, and the one most independent trainers skip because it feels like extra work. 
 
-But logging what actually happened (weights used, reps completed, or how the client felt) in a session is what separates trainers who reliably get results from trainers who guess. 
-
-It also protects you. 
-
-If a client ever questions their progress, you have data.
+But logging what actually happened (weights used, reps completed, or how the client felt) in a session is what separates trainers who reliably get results from trainers who guess. If a client ever questions their progress, you have data.
 
 **Session history and payment status.** We are not just talking about upcoming sessions. The past ones: 
 
