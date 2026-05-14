@@ -22,11 +22,29 @@
     a:hover { text-decoration: underline; }
 
     .page {
-      max-width: 480px;
-      margin: 0 auto;
-      border-left: 0.5px solid rgba(255,255,255,0.06);
-      border-right: 0.5px solid rgba(255,255,255,0.06);
+      width: 100%;
       min-height: 100vh;
+    }
+
+    .page > * {
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .nav {
+      max-width: 100% !important;
+      padding: 14px 48px;
+      border-bottom: 0.5px solid rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 600px) {
+      .nav { padding: 14px 24px; }
+      .hero { padding: 36px 24px 28px; }
+      .tabs-wrapper { padding: 16px 24px 0; }
+      .tab-content { padding: 20px 24px; }
+      .launch-section { padding: 16px 24px 24px; }
+      .audience-grid { grid-template-columns: 1fr 1fr; }
     }
 
     /* ── Nav ── */
@@ -44,7 +62,7 @@
 
     /* ── Hero ── */
     .hero {
-      padding: 44px 24px 36px;
+      padding: 64px 48px 48px;
       text-align: center;
       border-bottom: 0.5px solid rgba(255,255,255,0.08);
     }
