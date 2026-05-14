@@ -13,7 +13,15 @@ Most personal trainers are great at training. The actual coaching part (reading 
 
 The business side however is a different story.
 
-Ask a typical independent PT or a contractor where they keep their client information and you'll get one of four answers: a notes app, an expensive PT app, a spreadsheet that's six months out of date, or "kind of in my head." None of those scale. And when something goes wrong, like a missed payment, a client who stops showing up, or a scheduling conflict, you realize pretty quickly that "kind of in my head" isn't a system.
+Ask a typical independent PT or a contractor where they keep their client information and you'll get one of four answers: 
+- A notes app
+- An expensive PT app that costs over $60/month (if you miss a payment, you then lose full access)
+- A spreadsheet that's six months out of date
+- A "kind of in my head"
+
+These are very difficult for your PT business to scale.
+
+And when something goes wrong, like a missed payment, a client who stops showing up, or a scheduling conflict, you realize pretty quickly that "kind of in my head" isn't a system.
 
 Here's what you should actually be tracking for every client, and why it matters more than you think.
 
