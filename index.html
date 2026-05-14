@@ -45,7 +45,7 @@
       .nav { padding: 14px 20px; }
       .hero { padding: 36px 20px 28px; }
       .tabs-wrapper { padding: 16px 20px 0; }
-      .tab-content { padding: 20px; }
+      .tab-content { padding: 20px 20px; }
       .launch-section { padding: 16px 20px 24px; }
     }
 
@@ -87,17 +87,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .hero-note { font-size: 11px; color: #a0aab8; margin-top: 8px; }
-
-    /* ── Beehiiv iframe ── */
-    .beehiiv-embed {
-      width: 100%;
-      max-width: 480px;
-      height: 52px;
-      border: none;
-      display: block;
-      margin: 0 auto;
-    }
+    .hero-note { font-size: 11px; color: #a0aab8; }
 
     /* ── Tabs ── */
     .tabs-wrapper {
@@ -213,7 +203,7 @@
     }
     .launch-card h3 { font-size: 19px; font-weight: 600; color: #1a2744; margin-bottom: 8px; }
     .launch-card p { font-size: 13px; color: #5a6478; margin-bottom: 20px; line-height: 1.6; }
-    .launch-note { font-size: 11px; color: #a0aab8; margin-top: 10px; }
+    .launch-note { font-size: 11px; color: #a0aab8; }
 
     /* ── Footer ── */
     .footer {
@@ -240,13 +230,10 @@
       <div class="badge"><div class="badge-dot"></div>App coming soon · iOS & Android</div>
       <h1>Your training business,<br><span>finally under control.</span></h1>
       <p>Built for independent personal trainers done duct-taping their business together with spreadsheets and notes apps.</p>
-      <iframe
-        src="https://embeds.beehiiv.com/d75830dc-debd-4c1e-bd58-96bfc2b69b2d"
-        data-test-id="beehiiv-embed"
-        class="beehiiv-embed"
-        scrolling="no"
-      ></iframe>
-      <p class="hero-note">Free trial at launch · No credit card required</p>
+      <div style="max-width:420px;margin:0 auto;">
+  <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="d75830dc-debd-4c1e-bd58-96bfc2b69b2d"></script>
+</div>
+      <p class="hero-note" style="margin-top:10px;">Free trial at launch · No credit card required</p>
     </section>
 
     <!-- Tabs -->
@@ -291,12 +278,7 @@
         <div class="response-features" id="response-features"></div>
         <div class="response-divider"></div>
         <div class="response-cta-label">Join the waitlist · Be the first when we solve this for you.</div>
-        <iframe
-          src="https://embeds.beehiiv.com/d75830dc-debd-4c1e-bd58-96bfc2b69b2d"
-          data-test-id="beehiiv-embed"
-          class="beehiiv-embed"
-          scrolling="no"
-        ></iframe>
+<script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="d75830dc-debd-4c1e-bd58-96bfc2b69b2d"></script>
         <p class="response-note">Free trial at launch · No credit card needed</p>
       </div>
     </div>
@@ -362,13 +344,7 @@
       <div class="launch-card">
         <h3>Be first when we launch.</h3>
         <p>Join the waitlist for early access and a free trial.<br>No spam. No credit card. Just first in line.</p>
-        <iframe
-          src="https://embeds.beehiiv.com/d75830dc-debd-4c1e-bd58-96bfc2b69b2d"
-          data-test-id="beehiiv-embed"
-          class="beehiiv-embed"
-          scrolling="no"
-        ></iframe>
-        <p class="launch-note">Free trial at launch · Cancel anytime</p>
+<script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="d75830dc-debd-4c1e-bd58-96bfc2b69b2d"></script>        <p class="launch-note" style="margin-top:10px;">Free trial at launch · Cancel anytime</p>
       </div>
     </section>
 
@@ -437,6 +413,7 @@
       card.classList.add('visible');
       setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
     }
+    
   </script>
 </body>
 </html>
